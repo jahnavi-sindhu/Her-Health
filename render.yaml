@@ -2,8 +2,8 @@ services:
   - type: web
     name: her-health-backend
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python app.py"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
     workingDir: backend
 
   - type: web
