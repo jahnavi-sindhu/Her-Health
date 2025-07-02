@@ -5,11 +5,8 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
     workingDir: backend
-    plan: free  # Optional: set plan, e.g., free, starter, etc.
-
   - type: web
     name: her-health-frontend
     env: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: frontend/build
-    workingDir: frontend
+    buildCommand: ""
+    staticPublishPath: frontend
