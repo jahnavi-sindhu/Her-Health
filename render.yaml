@@ -1,8 +1,13 @@
 services:
   - type: web
-    name: her-health-api
+    name: her-health-backend
     env: python
-    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python app.py"
     workingDir: backend
+
+  - type: web
+    name: her-health-frontend
+    env: static
+    buildCommand: ""
+    staticPublishPath: frontend
