@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+import os
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -25,4 +26,5 @@ def predict():
     return jsonify({"prediction": int(prediction)})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render provides this PORT
+    app.run(debug=True, host="0.0.0.0", port=port)
